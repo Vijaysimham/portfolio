@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vijay Portfolio</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <!-- Internal CSS -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: #222;
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      height: 60px;
+      border-radius: 8px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+
+    nav ul li a:hover {
+      color: #0077ff;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    #home {
+      padding-top: 80px;
+    }
+
+    .info {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .info h1 span {
+      color: #0077ff;
+      font-size: 2.5rem;
+    }
+
+    .info p {
+      margin-top: 20px;
+      line-height: 1.6;
+      font-size: 16px;
+      color: #444;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 28px;
+      background-color: #0077ff;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #005bb5;
+    }
+
+    #file-name {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .right-image img {
+      width: 200px;
+      margin-top: 40px;
+      border-radius: 50%;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .social {
+      margin-top: 30px;
+    }
+
+    .social a {
+      color: #0077ff;
+      margin: 0 10px;
+      font-size: 26px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .social a:hover {
+      color: #005bb5;
+    }
+
+    /* EXPERIENCE SECTION */
+    #experience {
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin: 40px auto;
+      border-radius: 12px;
+      max-width: 800px;
+      padding: 40px 20px;
+    }
+
+    #experience h2 {
+      color: #0077ff;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .exp-item {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .exp-item h3 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    /* CONTACT SECTION */
+    #contact {
+      background: #0077ff;
+      color: white;
+      padding: 60px 20px;
+    }
+
+    #contact h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .contact-info p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .contact-info i {
+      margin-right: 10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+      .info h1 span {
+        font-size: 2rem;
+      }
+      .right-image img {
+        width: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <img src="logo.png.jpg" alt="Logo" class="logo">
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a id="exp-link" href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HOME Section -->
+  <section id="home">
+    <div class="info">
+      <h1><span>I am Simham Vijay</span></h1>
+      <p>
+        Enthusiastic and proactive BCA student with a strong interest in software development,
+        data analysis, and emerging technologies. Strong interpersonal and leadership skills.
+        A person who believes that hard work leads to success, well-disciplined with the ability
+        to master new skills, and has a good foundation of technical skills that would bring value
+        along with my drive and work ethic.
+      </p>
+
+      <!-- Upload CV Buttons -->
+      <label for="cv-upload" class="btn" id="upload-btn">
+        <i class="fa-solid fa-upload"></i> Upload CV
+      </label>
+      <input type="file" id="cv-upload" accept=".pdf,.doc,.docx" style="display:none;">
+
+      <button class="btn" id="edit-cv-btn" style="display:none;">
+        <i class="fa-solid fa-pen-to-square"></i> Edit CV
+      </button>
+
+      <a id="download-cv-btn" class="btn" style="display:none;" download="Vijay_CV">
+        <i class="fa-solid fa-download"></i> View / Download CV
+      </a>
+
+      <p id="file-name"></p>
+
+      <div class="right-image">
+        <img src="VIJAY PASS PHOTO.png" alt="Vijay Photo">
+      </div>
+
+      <div class="social">
+        <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" title="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://www.instagram.com/your-instagram-handle" target="_blank" title="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE Section -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <div id="exp-content">
+      <p>Click the “Experience” link in the menu to show my job title.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-info">
+      <p><i class="fa-solid fa-envelope"></i> Email:
+        <a href="mailto:vijay.simham@gmail.com" style="color:white; text-decoration:underline;">simham.vijay24@gmail.com</a>
+      </p>
+      <p><i class="fa-solid fa-phone"></i> Phone:
+        <a href="tel:+919876543210" style="color:white; text-decoration:underline;">+91 7416406481</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    const cvInput = document.getElementById('cv-upload');
+    const fileName = document.getElementById('file-name');
+    const downloadBtn = document.getElementById('download-cv-btn');
+    const editBtn = document.getElementById('edit-cv-btn');
+    const uploadBtn = document.getElementById('upload-btn');
+    const expLink = document.getElementById('exp-link');
+    const expContent = document.getElementById('exp-content');
+
+    // Load CV from Local Storage
+    window.addEventListener('load', () => {
+      const savedCV = localStorage.getItem('cvData');
+      const savedCVName = localStorage.getItem('cvName');
+
+      if (savedCV && savedCVName) {
+        fileName.textContent = "Stored CV: " + savedCVName;
+        downloadBtn.style.display = "inline-block";
+        editBtn.style.display = "inline-block";
+        uploadBtn.style.display = "none";
+        downloadBtn.href = savedCV;
+      }
+    });
+
+    // Upload new CV
+    cvInput.addEventListener('change', function() {
+      if (this.files.length > 0) {
+        const file = this.files[0];
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          localStorage.setItem('cvData', e.target.result);
+          localStorage.setItem('cvName', file.name);
+
+          fileName.textContent = "Stored CV: " + file.name;
+          downloadBtn.href = e.target.result;
+          downloadBtn.style.display = "inline-block";
+          editBtn.style.display = "inline-block";
+          uploadBtn.style.display = "none";
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // Edit CV
+    editBtn.addEventListener('click', () => {
+      cvInput.click();
+    });
+
+    // Show job title when Experience is clicked
+    expLink.addEventListener('click', () => {
+      expContent.innerHTML = `
+        <div class="exp-item">
+          <h3>Job Title: Java Full Stack Web Development</h3>
+          <p>Worked on building responsive full stack applications using Java, Spring Boot, HTML, CSS, and JavaScript.</p>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>
